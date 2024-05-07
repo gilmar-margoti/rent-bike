@@ -2,16 +2,14 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
+    @bike = Bike.find(params[:bike_id])
   end
 
   def new
     @booking = Booking.new
     @bike = Bike.find(params[:bike_id])
   end
+
   def create
     @booking = Booking.new(booking_params)
     @bike = Bike.find(params[:bike_id])
@@ -23,7 +21,9 @@ class BookingsController < ApplicationController
     end
   end
 
-
+  def show
+    @booking = Booking.find(params[:id])
+  end
 
   private
 
