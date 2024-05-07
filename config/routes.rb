@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   resources :bikes do
     resources :bookings
   end
-  resources :user, only: %i[new create]
 end
