@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_07_145353) do
   create_table "bikes", force: :cascade do |t|
     t.string "location"
     t.decimal "price_per_day"
-    t.string "type"
+    t.string "category"
     t.integer "condition"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
