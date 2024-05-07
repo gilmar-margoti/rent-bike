@@ -8,9 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Bike.create(type: 'boardman road bike', price_per_day: 5.00, location: "greenwich park", condition: 4)
-Bike.create(type: 'e bike', price_per_day: 25.00, location: "dalston", condition: 3)
-Bike.create(type: 'bmx', price_per_day:3.00, location: "seven sisters", condition: 1)
+Bike.create(category: 'boardman road bike', price_per_day: 5.00, location: "greenwich park", condition: 4)
+Bike.create(category: 'e bike', price_per_day: 25.00, location: "dalston", condition: 3)
+Bike.create(category: 'bmx', price_per_day:3.00, location: "seven sisters", condition: 1)
 
 
 
