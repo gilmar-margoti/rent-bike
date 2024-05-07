@@ -1,3 +1,18 @@
 <h1>bike page</h1>
-<p>page to list all the bikes in your neighbhourhood</p>
-<title>Bikes in Your Area</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<h1>Bikes in Your Area</h1>
+
+<div class="row">
+  <% @bikes.each do |bike| %>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= bike.location %></h5>
+          <p class="card-text">Price per Day: £<%= bike.price_per_day %></p>
+          <p class="card-text">Category: <%= bike.category %></p>
+          <p class="card-text">Condition: <%= bike.condition %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
