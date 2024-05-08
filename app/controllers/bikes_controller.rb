@@ -11,9 +11,10 @@ class BikesController < ApplicationController
   def create
     puts params.inspect
     @bike = Bike.new(bike_params)
+    @bike.user = current_user
     if @bike.save
-      raise
-      redirect_to bike_path(@bikes)
+
+      redirect_to bike_path(@bike)
     else
       render :new, status: :unprocessable_entity
     end

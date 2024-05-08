@@ -1,0 +1,23 @@
+<h1>Bike Details</h1>
+
+<div>
+<strong>Category:</strong>
+<%= @bike.category %>
+</div>
+<div>
+  <strong>Location:</strong>
+  <%= @bike.location %>
+</div>
+
+<div>
+  <strong>Condition:</strong>
+  <%= @bike.condition %>
+</div>
+
+<div>
+  <strong>Price per Day:</strong>
+  <%= number_to_currency(@bike.price_per_day) %>
+</div>
+
+<%= link_to 'Edit', edit_bike_path(@bike) %> |
+<%= link_to 'Back', bikes_path %>
