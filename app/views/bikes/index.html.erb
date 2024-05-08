@@ -13,6 +13,7 @@
           <p class="card-text">Price per Day: £<%= bike.price_per_day %></p>
           <p class="card-text">Category: <%= bike.category %></p>
           <p class="card-text">Condition: <%= bike.condition %></p>
+          <%= link_to 'View Details', bike_path(bike) %>
         </div>
       </div>
     </div>
