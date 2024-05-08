@@ -1,48 +1,23 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
+puts "Cleaning database..."
 Bike.destroy_all
 User.destroy_all
+Bookings.destroy_all
 
-jane = User.create!(name: 'Jane Doe', email: 'jane.doe@gmail.com', password: 'ilovelewagon')
+puts "Creating users..."
+User.create!(first_name: "Gilmar", last_name: "Margoti", profile: "", email: "gilmar@gmail.com")
+User.create!(first_name: "Ella",   last_name: "Pierri",  profile: "", email: "ellajpierre@gmail.com")
+User.create!(first_name: "Max",    last_name: "Cody",    profile: "", email: "codym08@gmail.com")
+puts "Users created successfully..."
 
-Bike.create!(category: 'boardman road bike', price_per_day: 5.00, location: "greenwich park", condition: 4, user: jane)
-Bike.create!(category: 'e bike', price_per_day: 25.00, location: "dalston", condition: 3, user: jane)
-Bike.create!(category: 'bmx', price_per_day: 3.00, location: "seven sisters", condition: 1, user: jane)
+puts "Creating bikes..."
+Bike.create!(location: "Putney",           price_per_day: 5.00, category: "Road bike",     condition: 3, user_id: 1)
+Bike.create!(location: "Shoreditch",       price_per_day: 25.00, category: "Eletric bike", condition: 5, user_id: 2)
+Bike.create!(location: "Richmond",         price_per_day: 15.00, category: "Road bike",    condition: 4, user_id: 3)
+Bike.create!(location: "Fulham",           price_per_day: 8.00, category: "Hybrid bike",   condition: 3, user_id: 1)
+Bike.create!(location: "Soho",             price_per_day: 10.00, category: "BMX",          condition: 3, user_id: 3)
+Bike.create!(location: "Acton",            price_per_day: 13.00, category: "Road bike",    condition: 3, user_id: 2)
+Bike.create!(location: "Battersea",        price_per_day: 6.00, category: "Hybrid bike",   condition: 2, user_id: 2)
+Bike.create!(location: "Clapham Junction", price_per_day: 8.00, category: "Road bike",     condition: 2, user_id: 3)
+puts "Bicycles created successfully..."
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# create_table "bikes", force: :cascade do |t|
-#   t.string "location"
-#   t.decimal "price_per_day"
-#   t.string "type"
-#   t.integer "condition"
-#   t.bigint "user_id", null: false
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-#   t.index ["user_id"], name: "index_bikes_on_user_id"
-# end
+puts "Finished!"
