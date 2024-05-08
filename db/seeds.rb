@@ -1,6 +1,6 @@
 puts "Cleaning database..."
-User.destroy_all
 Bike.destroy_all
+User.destroy_all
 Booking.destroy_all
 
 # USERS
