@@ -1,6 +1,8 @@
 <h1>bike page</h1>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <h1>Bikes in Your Area</h1>
+<!-- Add a link/button to create a new bike -->
+<%= link_to 'Create New Bike', new_bike_path, class: 'btn btn-primary' %>
 
 <div class="row">
   <% @bikes.each do |bike| %>
