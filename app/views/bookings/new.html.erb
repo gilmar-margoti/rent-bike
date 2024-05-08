@@ -1,4 +1,23 @@
-<h1>Book this bike!</h1>
+<h1>enter shared navbar here</h1>
+<div class="booking-card-container">
+  <div class="booking-info-container">
+    <div class="bike-booking-summary">
+    <%= @booking.start_date %>
+    <%= @booking.end_date %>
+    <%= @bike.category %>
+    </div>
+    <div class="booking-info-breakdown">
+      <div class="bike-card">
+        <p>input bike card info component</p>
+      </div>
+      <% days = @booking.end_date - @booking.start_date %>
+      <% total_price = @bike.price * days %>
+      <p> <%= @bike.price %> x <%= days %> </p>
+      <p>TOTAL: <%= total_price %></p>
+    </div>
+  </div>
+</div>
+
 <%= simple_form_for [@bike, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date%>
