@@ -1,21 +1,6 @@
 <h1>bike page</h1>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <h1>Bikes in Your Area</h1>
-<!-- Add a link/button to create a new bike -->
-<%= link_to 'Create New Bike', new_bike_path, class: 'btn btn-primary' %>
 
-<div class="row">
-  <% @bikes.each do |bike| %>
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><%= bike.location %></h5>
-          <p class="card-text">Price per Day: £<%= bike.price_per_day %></p>
-          <p class="card-text">Category: <%= bike.category %></p>
-          <p class="card-text">Condition: <%= bike.condition %></p>
-          <%= link_to 'View Details', bike_path(bike) %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+
+<%= render "card_detail" %>
