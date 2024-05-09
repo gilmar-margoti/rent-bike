@@ -1,7 +1,7 @@
 class BikesController < ApplicationController
   def index
     @bikes = Bike.all
-    @markers = @bikes.geocoded.map do |flat|
+    @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
         lng: bike.longitude
