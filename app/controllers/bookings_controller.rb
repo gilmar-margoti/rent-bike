@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_bike, only: %i[index new create show]
+  before_action :set_bike
   def index
     @bookings = Booking.all
   end
@@ -21,12 +21,23 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    set_booking
+  end
 
-  def edit; end
+  def edit
+    set_booking
+  end
 
   def update
+    @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+    redirect_to bike_booking_path
+  end
+
+  def destroy
+    set_booking
+    @booking.destroy
     redirect_to bike_booking_path
   end
 
@@ -38,5 +49,9 @@ class BookingsController < ApplicationController
 
   def set_bike
     @bike = Bike.find(params[:bike_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end

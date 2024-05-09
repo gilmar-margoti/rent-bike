@@ -5,10 +5,12 @@
     <div class="col-md-4 mb-4">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"> Pick up:<%=  @booking.start_date %></h5>
-          <p class="card-text">Drop off: <%= @booking.end_date %></p>
+          <h5 class="card-title"> Booking ref: #RAB24<%=  @booking.id %></h5>
+          <p class="card-text">Pick Up: <%= @booking.start_date%> </p>
+          <p class="card-text">Drop off: <%= @booking.end_date%> </p>
           <% days = @booking.end_date - @booking.start_date %>
-          <p class="card-text">Total: £<%= @bike.price * days%></p>
+          <%= days %>
+          <p class="card-text">Total: £<%= @bike.price_per_day %></p>
           <%= link_to 'Back to bikes', bikes_path %>
         </div>
       </div>
