@@ -12,10 +12,13 @@ class BookingsController < ApplicationController
 
   def create
     @bike = Bike.find(params[:bike_id])
+    @user = @bike.user
     @booking = Booking.new(booking_params)
     @booking.bike = @bike
+    @booking.user = @user
+    @booking.save
     if @booking.save
-      redirect_to bike_booking_path
+      redirect_to bike_bookings_path
     else
       render :new, status: :unprocessable_entity
     end
