@@ -1,1 +1,16 @@
-<h1>booking show page</h1>
+<div class="booking-card-container">
+  <h1>Your bike is booked!</h1>
+<%# Booking card info  %>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"> Pick up:<%=  @booking.start_date %></h5>
+          <p class="card-text">Drop off: <%= @booking.end_date %></p>
+          <% days = @booking.end_date - @booking.start_date %>
+          <p class="card-text">Total: £<%= @bike.price * days%></p>
+          <%= link_to 'Back to bikes', bikes_path %>
+        </div>
+      </div>
+    </div>
+</div>
