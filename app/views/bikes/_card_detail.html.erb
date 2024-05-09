@@ -1,0 +1,34 @@
+<%= stylesheet_link_tag("bike_index")%>
+
+<div class="row">
+  <% @bikes.each do |bike| %>
+    <div class="col col-md-3 ml-2 mr-2 mt-3 mb-3">
+      <div class="card" id="card-bike">
+        <img src="https://d1mo5ln9tjltxq.cloudfront.net/-/media/images/my23/bikes/road/endurance/synapse/tech-images/c23_synapsealloy_tech_0004.ashx?mh=2560&mw=1920&hash=C1DEADD7DE90FB022FDE5A6E51173ACE" class="card-img-top" alt="Bike image">
+        <div class="card-body">
+          <div class="d-flex justify-content-between mb-3">
+            <div>
+              <h5 class="card-title"><%= bike.location %></h5>
+              <p class="card-text"><%= bike.category %></p>
+              <p class="card-text">£<%= bike.price_per_day %> per day</p>
+            </div>
+            <div>
+              <p class="card-text"><%= bike.condition %></p>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between" id="div-links">
+            <div>
+            <%= link_to 'Book', bike_path(bike) %>
+            </div>
+            <div>
+            <%= link_to 'View Details', bike_path(bike) %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+</div>
