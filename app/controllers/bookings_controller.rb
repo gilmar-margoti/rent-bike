@@ -1,17 +1,14 @@
 class BookingsController < ApplicationController
-
+  before_action :set_bike, only: %i[index new create show]
   def index
     @bookings = Booking.all
-    @bike = Bike.find(params[:bike_id])
   end
 
   def new
     @booking = Booking.new
-    @bike = Bike.find(params[:bike_id])
   end
 
   def create
-    @bike = Bike.find(params[:bike_id])
     @user = @bike.user
     @booking = Booking.new(booking_params)
     @booking.bike = @bike
@@ -24,13 +21,22 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show
-    @booking = Booking.find(params[:id])
+  def show; end
+
+  def edit; end
+
+  def update
+    @booking.update(booking_params)
+    redirect_to bike_booking_path
   end
 
   private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :bike_id, :user_id)
+  end
+
+  def set_bike
+    @bike = Bike.find(params[:bike_id])
   end
 end
