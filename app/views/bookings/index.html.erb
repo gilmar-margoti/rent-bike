@@ -18,10 +18,13 @@
           </div>
           <div class="d-flex justify-content-between" id="div-links">
             <div>
-            <%= link_to 'Amend', bike_path(@bike) %>
+            <%= link_to 'Amend',  edit_bike_booking_path(@bike, booking.id) %>
             </div>
             <div>
-            <%= link_to 'Cancel', bike_path(@bike) %>
+             <%= link_to "Delete",
+            bike_booking_path(@bike, booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            %>
             </div>
           </div>
         </div>
