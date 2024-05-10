@@ -1,4 +1,6 @@
 class BikesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @bikes = Bike.all
     @markers = @bikes.geocoded.map do |bike|
@@ -6,6 +8,13 @@ class BikesController < ApplicationController
         lat: bike.latitude,
         lng: bike.longitude
       }
+    end
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        bikes.location @@ :query
+        OR bikes.category @@ :query
+      SQL
+      @bikes = @bikes.where(sql_subquery, query: params[:query])
     end
   end
 
