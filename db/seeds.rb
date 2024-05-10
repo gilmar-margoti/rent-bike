@@ -13,7 +13,7 @@ puts "Users created successfully..."
 # BIKES
 puts "Creating bikes..."
 Bike.create!(location: "Putney",           price_per_day: 5.00,  category: "Road bike",    condition: 3, user: gilmar)
-Bike.create!(location: "Shoreditch",       price_per_day: 25.00, category: "Eletric bike", condition: 5, user: ella)
+# Bike.create!(location: "Shoreditch",       price_per_day: 25.00, category: "Eletric bike", condition: 5, user: ella)
 Bike.create!(location: "Richmond london",         price_per_day: 15.00, category: "Road bike",    condition: 4, user: max)
 Bike.create!(location: "Fulham",           price_per_day: 8.00,  category: "Hybrid bike",  condition: 3, user: gilmar)
 Bike.create!(location: "Soho",             price_per_day: 10.00, category: "BMX",          condition: 3, user: ella)
