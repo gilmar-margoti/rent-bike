@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to bike_booking_path
+    redirect_to booking_path
   end
 
   def destroy

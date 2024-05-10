@@ -14,7 +14,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between mb-3">
               <div>
-                <h5 class="card-title back-link"> <%= link_to  "Booking reference: #RAB24#{booking.id}", booking_path(booking) %> </h5>
+                <h5 class="card-title booking-link"> <%= link_to  "Booking reference: #RAB24#{booking.id}", booking_path(booking) %> </h5>
                 <p class="card-text"><%= booking.bike.location %></p>
                   <div class="dates">
                   <p class="card-text"> <strong>Pick Up: </strong><%= booking.start_date%> </p>
