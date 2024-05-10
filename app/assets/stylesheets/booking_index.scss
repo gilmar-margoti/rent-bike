@@ -28,7 +28,7 @@
 
 .card-booking:before {
   content: "";
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   display: block;
@@ -44,15 +44,10 @@
   opacity: 1;
 }
 
-.form {
-  position:relative;
-  z-index: 10;
-}
-
 .back-link a{
   color: rgb(5,180,112);
 }
 
-.container{
-  margin: 0 auto;
+.dates p{
+  margin: 0px;
 }

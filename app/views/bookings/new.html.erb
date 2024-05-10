@@ -1,31 +1,36 @@
 <%= stylesheet_link_tag("booking_new")%>
+<div class="container">
 
-<h5 class="card-title"> Book your bike: <%=  @bike.category %></h5>
-
-<div class="row">
-  <div class="col-sm-12 col-md-6">
-    <div class="card p-2 m-2 card-bike">
-    <img src="https://d1mo5ln9tjltxq.cloudfront.net/-/media/images/my23/bikes/road/endurance/synapse/tech-images/c23_synapsealloy_tech_0004.ashx?mh=2560&mw=1920&hash=C1DEADD7DE90FB022FDE5A6E51173ACE" class="card-img-top" alt="Bike image">
-      <div class="card-body">
-        <h5 class="card-title"><%= @bike.location %></h5>
-        <p class="card-text">Price per Day: £<%= @bike.price_per_day %></p>
-        <p class="card-text">Category: <%= @bike.category %></p>
-        <p class="card-text">Condition: <%= @bike.condition %></p>
-        <%= link_to 'View Details', bike_path(@bike), class:'btn' %>
+  <h4 class="card-title mt-3"> Book your bike: <%=  @bike.category %></h4>
+    <div class="back-link">
+    <p><%= link_to 'Back to all bikes', bikes_path %></p>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="card p-2 m-2 card-booking">
+      <img src="https://d1mo5ln9tjltxq.cloudfront.net/-/media/images/my23/bikes/road/endurance/synapse/tech-images/c23_synapsealloy_tech_0004.ashx?mh=2560&mw=1920&hash=C1DEADD7DE90FB022FDE5A6E51173ACE" class="card-img-top" alt="Bike image">
+        <div class="card-body">
+          <h5 class="card-title"><%= @bike.location %></h5>
+          <p class="card-text">Price per Day: £<%= @bike.price_per_day %></p>
+          <p class="card-text">Category: <%= @bike.category %></p>
+          <% condition = "<i class='fa-solid fa-star' style='color: #05b470;'></i>" %>
+          <p class="card-text">Condition: <%= condition * @bike.condition  %></p>
+          <%= link_to 'View Details', bike_path(@bike), class:'btn' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <div class="card p-2 m-2 card-booking">
+      <h5>Pick your dates!</h5>
+        <div class="form">
+          <%= simple_form_for [@bike, @booking] do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date%>
+            <%= f.submit "Book", class: 'btn btn-flat' %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-12 col-md-6">
-    <div class="card p-2 m-2 card-bike">
-    <h5>Pick your dates!</h5>
-      <%= simple_form_for [@bike, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date%>
-        <%= f.submit "Book", class: 'btn btn-flat' %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="back-link">
-  <p><%= link_to 'Back to all bikes', bikes_path %></p>
+
 </div>
