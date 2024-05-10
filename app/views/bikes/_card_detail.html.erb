@@ -18,7 +18,8 @@
               <p class="card-text"><%= number_to_currency(bike.price_per_day, unit: "£") %> per day</p>
             </div>
             <div>
-              <p class="card-text"><%= bike.condition %></p>
+          <% condition = "<i class='fa-solid fa-star' style='color: #05b470;'></i>".html_safe %>
+          <p class="card-text"><strong>Condition:</strong> <%= condition * bike.condition  %></p>
             </div>
           </div>
 
