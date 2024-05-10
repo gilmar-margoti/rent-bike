@@ -1,27 +1,44 @@
-<%= stylesheet_link_tag("banner_bike")%>
+<%= stylesheet_link_tag("bike_show")%>
 
-<h1>Bike Details</h1>
+<div class="parent container d-flex flex-column align-items-center h-100">
+  <h1>Bike Details</h1>
 
-<%= render "banner_bike" %>
+  <%= render "banner_bike" %>
 
-<div>
-<strong>Category:</strong>
-<%= @bike.category %>
+  <div class="container d-flex flex-column align-items-center h-100">
+    <div class="d-flex felx-row bike-info">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <p>Category</p>
+        <span><%= @bike.category %></span>
+      </div>
+    </div>
+
+    <div class="d-flex felx-row bike-info">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <p>Location</p>
+        <span><%= @bike.location %></span>
+      </div>
+    </div>
+
+    <div class="d-flex felx-row bike-info">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <p>Condition</p>
+        <span><%= @bike.condition %></span>
+      </div>
+    </div>
+
+    <div class="d-flex felx-row bike-info">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <p>Price per Day</p>
+        <span><%= number_to_currency(@bike.price_per_day) %></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <span id="nav-btn">
+      <span id="back-btn"><%= link_to 'Back', bikes_path %></span>
+      <span class="d-flex align-items-center justify-content-center" id="edit-btn"><%= link_to 'Edit', edit_bike_path(@bike) %></span>
+    </span>
+  </div>
 </div>
-<div>
-  <strong>Location:</strong>
-  <%= @bike.location %>
-</div>
-
-<div>
-  <strong>Condition:</strong>
-  <%= @bike.condition %>
-</div>
-
-<div>
-  <strong>Price per Day:</strong>
-  <%= number_to_currency(@bike.price_per_day) %>
-</div>
-
-<%= link_to 'Edit', edit_bike_path(@bike) %> |
-<%= link_to 'Back', bikes_path %>
