@@ -22,7 +22,9 @@
                   <p>Bike booked for: <%= days.to_i %> days</p>
                   <% end %>
                 </div>
-            <p class="card-text"> <strong>Total:</strong> £<%= @booking.bike.price_per_day %></p>
+              <div>
+                <p class="card-text"><strong>Total: </strong>£<%= @booking.bike.price_per_day * days.to_i %></p>
+              </div>
             <%= link_to 'See all my bookings', bookings_path, class: 'btn btn-flat' %>
           </div>
         </div>
