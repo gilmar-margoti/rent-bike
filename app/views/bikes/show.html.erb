@@ -30,7 +30,7 @@
     <div class="d-flex felx-row bike-info">
       <div class="d-flex flex-column align-items-center justify-content-center">
         <p>Price per Day</p>
-        <span><%= number_to_currency(@bike.price_per_day) %></span>
+        <span><%= number_to_currency(@bike.price_per_day, unit: "£") %></span>
       </div>
     </div>
   </div>
