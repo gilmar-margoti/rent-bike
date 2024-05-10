@@ -1,0 +1,16 @@
+  <%= simple_form_for @bike do |form| %>
+    <%= form.error_notification %>
+
+    <div class="form-inputs">
+      <%= form.input :category %>
+      <%= form.input :location %>
+      <%= form.input :condition %>
+      <%= form.input :price_per_day %>
+      <%= form.input :photos, as: :file, input_html: { multiple: true } %>
+    </div>
+
+    <span id="nav-btn">
+      <%= link_to 'Back', bikes_path %>
+      <%= form.submit class: 'btn btn-primary' %>
+    </span>
+  <% end %>

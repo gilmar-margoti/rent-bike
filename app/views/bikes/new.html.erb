@@ -1,14 +1,7 @@
-<h1>Create a new bike to rent</h1>
-<%= simple_form_for @bike do |form| %>
-  <%= form.error_notification %>
+<%= stylesheet_link_tag("bike_new")%>
 
-  <div class="form-inputs">
-    <%= form.input :category %>
-    <%= form.input :location %>
-    <%= form.input :condition %>
-    <%= form.input :price_per_day %>
-    <%= form.submit class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<div class="parent container d-flex flex-column align-items-center h-100">
+  <h1>Create your new bike</h1>
 
-<%= link_to 'Back', bikes_path %>
+  <%= render "form" %>
+</div>

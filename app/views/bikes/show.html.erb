@@ -1,29 +1,27 @@
+<%= stylesheet_link_tag("banner_bike")%>
+
 <h1>Bike Details</h1>
-<div class="container">
 
- <div class="card" id="card-bike">
-        <img src="https://d1mo5ln9tjltxq.cloudfront.net/-/media/images/my23/bikes/road/endurance/synapse/tech-images/c23_synapsealloy_tech_0004.ashx?mh=2560&mw=1920&hash=C1DEADD7DE90FB022FDE5A6E51173ACE" class="card-img-top" alt="Bike image">
-        <div class="card-body">
-          <div class="d-flex justify-content-between mb-3">
-            <div>
-              <h5 class="card-title"><%= @bike.location %></h5>
-              <p class="card-text"><%= @bike.category %></p>
-              <p class="card-text">£<%= @bike.price_per_day %> per day</p>
-            </div>
-            <div>
-              <p class="card-text"><%= @bike.condition %></p>
-            </div>
-          </div>
+<%= render "banner_bike" %>
 
-          <div class="d-flex justify-content-between" id="div-links">
-            <div>
-            <%= link_to 'Book', new_bike_booking_path(@bike), class: 'btn btn-flat btn-primary' %>
-            </div>
-            <div>
-            <%= link_to 'Back', bikes_path %>
-            </div>
-          </div>
-
-        </div>
-      </div>
+<div>
+<strong>Category:</strong>
+<%= @bike.category %>
 </div>
+<div>
+  <strong>Location:</strong>
+  <%= @bike.location %>
+</div>
+
+<div>
+  <strong>Condition:</strong>
+  <%= @bike.condition %>
+</div>
+
+<div>
+  <strong>Price per Day:</strong>
+  <%= number_to_currency(@bike.price_per_day) %>
+</div>
+
+<%= link_to 'Edit', edit_bike_path(@bike) %> |
+<%= link_to 'Back', bikes_path %>
