@@ -1,11 +1,15 @@
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 <h1>Bikes in Your Area</h1>
+
 <%= render "searchbar" %>
+<div class="flexbox">
+  <div class="bike-cards px-2">
+  <%= render "card_detail" %>
+  </div>
 
-<%= render "card_detail" %>
-
-<div style="width: 77%; height: 1200px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="map-card" style="width: 500px; height: 1200px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
