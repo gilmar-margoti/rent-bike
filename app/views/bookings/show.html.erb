@@ -1,18 +1,32 @@
-<div class="booking-card-container">
-  <h1>Your bike is booked!</h1>
-<%# Booking card info  %>
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"> Booking ref: #RAB24<%=  @booking.id %></h5>
-          <p class="card-text">Pick Up: <%= @booking.start_date%> </p>
-          <p class="card-text">Drop off: <%= @booking.end_date%> </p>
-          <% days = @booking.end_date - @booking.start_date %>
-          <%= days %>
-          <p class="card-text">Total: £<%= @bike.price_per_day %></p>
-          <%= link_to 'Back to bikes', bikes_path %>
+<%= stylesheet_link_tag("booking_show")%>
+<div class="container">
+
+  <div class="booking-card-container">
+    <h1>Your bike is booked!</h1>
+    <div class="back-link">
+    <%= link_to 'Back to bikes', bikes_path %>
+  </div>
+  <%# Booking card info  %>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card m-2 card-booking">
+          <div class="card-body ">
+            <h5 class="card-title"> Booking ref: #RAB24<%=  @booking.id %></h5>
+                <div class="dates">
+                  <p class="card-text"> <strong>Pick Up: </strong><%= @booking.start_date%> </p>
+                  <p class="card-text"> <strong>Drop off:</strong> <%= @booking.end_date%> </p>
+                  <% days = @booking.end_date - @booking.start_date %>
+                  <% if days == 1 %>
+                  <p>Bike booked for: <%= days.to_i %> day</p>
+                    <% else %>
+                  <p>Bike booked for: <%= days.to_i %> days</p>
+                  <% end %>
+                </div>
+            <p class="card-text"> <strong>Total:</strong> £<%= @bike.price_per_day %></p>
+            <%= link_to 'See all my bookings', bike_bookings_path, class: 'btn btn-flat' %>
+          </div>
         </div>
       </div>
-    </div>
+   </div>
+  </div>
 </div>
