@@ -20,6 +20,7 @@ Bike.create!(location: "Soho",             price_per_day: 10.00, category: "BMX"
 Bike.create!(location: "Acton",            price_per_day: 13.00, category: "Road bike",    condition: 3, user: max)
 Bike.create!(location: "Battersea",        price_per_day: 6.00,  category: "Hybrid bike",  condition: 2, user: gilmar)
 Bike.create!(location: "Clapham Junction", price_per_day: 8.00,  category: "Road bike",    condition: 2, user: ella)
+Bike.create!(location: "surrey",          price_per_day: 15.00,  category: "scooter",      condition: 2, user: ella)
 puts "Bicycles created successfully..."
 
 locations = [
