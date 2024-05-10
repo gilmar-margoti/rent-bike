@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
-  before_action :set_bike
+  before_action :set_bike, except: [:index, :show]
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
   end
 
   def new
@@ -9,13 +9,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @user = @bike.user
+    @user = current_user
     @booking = Booking.new(booking_params)
     @booking.bike = @bike
     @booking.user = @user
     @booking.save
     if @booking.save
-      redirect_to bike_booking_path(@bike, @booking)
+      redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
