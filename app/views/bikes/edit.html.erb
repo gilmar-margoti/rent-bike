@@ -1,0 +1,18 @@
+<h1>Edit your bike</h1>
+<%= simple_form_for @bike do |bike| %>
+  <%= bike.error_notification %>
+
+  <div class="form-inputs">
+    <%= bike.input :location %>
+    <%= bike.input :price_per_day %>
+    <%= bike.input :category %>
+    <%= bike.input :condition %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= bike.submit "submit", class: 'btn btn-primary'%>
+  </div>
+<% end %>
+
+<%= link_to 'Back', bikes_path %>
