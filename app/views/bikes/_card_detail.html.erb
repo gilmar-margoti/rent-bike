@@ -5,12 +5,10 @@
     <div class="col col-md-3 ml-2 mr-2 mt-3 mb-3">
       <div class="card" id="card-bike">
         <% if bike.photos.attached? %>
-          <%= cl_image_tag bike.photos.first.key, height: 400, width: 400, crop: :fill %>
+          <%= cl_image_tag bike.photos.first.key, class:"card-img-top" %>
         <% else %>
-          <img src="https://d1mo5ln9tjltxq.cloudfront.net/-/media/images/my23/bikes/road/endurance/synapse/tech-images/c23_synapsealloy_tech_0004.ashx?mh=2560&mw=1920&hash=C1DEADD7DE90FB022FDE5A6E51173ACE" class="card-img-top" alt="Bike image">
+          <img src="https://coloringonly.com/images/imgcolor/Free-Bicycle-coloring-page.jpg" class="card-img-top" alt="Bike image">
         <% end %>
-
-
 
         <div class="card-body">
           <div class="d-flex justify-content-between mb-3">
