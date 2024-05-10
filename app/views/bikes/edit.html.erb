@@ -1,18 +1,22 @@
-<h1>Edit your bike</h1>
-<%= simple_form_for @bike do |bike| %>
-  <%= bike.error_notification %>
+<%= stylesheet_link_tag("bike_new")%>
 
-  <div class="form-inputs">
-    <%= bike.input :location %>
-    <%= bike.input :price_per_day %>
-    <%= bike.input :category %>
-    <%= bike.input :condition %>
+<div class="parent container d-flex flex-column align-items-center h-100">
+  <h1>Edit your bike</h1>
+  <%= simple_form_for @bike do |bike| %>
+    <%= bike.error_notification %>
 
-  </div>
+    <div class="form-inputs">
+      <%= bike.input :location %>
+      <%= bike.input :price_per_day %>
+      <%= bike.input :category %>
+      <%= bike.input :condition %>
 
-  <div class="form-actions">
-    <%= bike.submit "submit", class: 'btn btn-primary'%>
-  </div>
-<% end %>
+    </div>
 
-<%= link_to 'Back', bikes_path %>
+    <div class="form-actions" id="nav-btn">
+      <%= link_to 'Back', bikes_path %>
+      <%= bike.submit "Update", class: 'btn btn-primary'%>
+    </div>
+  <% end %>
+
+</div>
