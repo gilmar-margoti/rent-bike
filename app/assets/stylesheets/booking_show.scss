@@ -5,6 +5,7 @@
   border: 1px solid rgba(246, 64, 94, 0.098);
   box-shadow: 10px 5px 5px rgba(189, 189, 189, 0.294);
   transition: 0.5s ease-in-out;
+  width: 400px;
 }
 
 .card-bike .btn {
@@ -12,6 +13,7 @@
   border: 1px solid rgba(246, 64, 94, 0.098);
   padding: 5px;
   width: 200px;
+  margin: 0 auto;
   background-color: rgba(246, 64, 94, 0.098);
   text-decoration: none;
   color: rgb(5,180,112);
@@ -26,7 +28,7 @@
 
 .card-bike:before {
   content: "";
-  // position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   display: block;
@@ -44,4 +46,5 @@
 
 .back-link a{
   color: rgb(5,180,112);
+  margin-left: 10px;
 }
