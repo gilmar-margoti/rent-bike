@@ -23,7 +23,9 @@
     <div class="d-flex felx-row bike-info">
       <div class="d-flex flex-column align-items-center justify-content-center">
         <p>Condition</p>
-        <span><%= @bike.condition %></span>
+
+        <% condition = "<i class='fa-solid fa-star' style='color: #05b470;'></i>".html_safe %>
+          <p class="card-text"><%= condition * @bike.condition  %></p>
       </div>
     </div>
 
