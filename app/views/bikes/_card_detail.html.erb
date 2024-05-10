@@ -2,7 +2,7 @@
 
 <div class="row">
   <% @bikes.each do |bike| %>
-    <div class="col col-md-3 ml-2 mr-2 mt-3 mb-3">
+    <div class="col col-md-4 mt-3 mb-3">
       <div class="card" id="card-bike">
         <% if bike.photos.attached? %>
           <%= cl_image_tag bike.photos.first.key, class:"card-img-top" %>
@@ -24,7 +24,7 @@
 
           <div class="d-flex justify-content-between" id="div-links">
             <div>
-            <%= link_to 'Book', bike_path(bike) %>
+            <%= link_to 'Book', new_bike_booking_path(bike) %>
             </div>
             <div>
             <%= link_to 'View Details', bike_path(bike) %>

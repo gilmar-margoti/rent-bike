@@ -57,3 +57,14 @@ a:hover {
   opacity: 1;
   transition: 0.5s all;
 }
+
+.flexbox{
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.map-card{
+  flex-shrink:0;
+  position: sticky;
+  top:0;
+}
