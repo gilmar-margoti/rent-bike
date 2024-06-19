@@ -1,11 +1,13 @@
+<%= stylesheet_link_tag("bike_index")%>
+
 <div class="row">
   <% @bikes.each do |bike| %>
     <div class="col col-md-4 mt-3 mb-3">
       <div class="card" id="card-bike">
         <% if bike.photos.attached? %>
-          <%= cl_image_tag bike.photos.first.key, class:"", width: 200 %>
+          <%= cl_image_tag bike.photos.first.key, class:"card-img-top" %>
         <% else %>
-          <%= image_tag "bike_default.png", class:"", width: 200 %>
+          <img src="https://coloringonly.com/images/imgcolor/Free-Bicycle-coloring-page.jpg" class="card-img-top" alt="Bike image">
         <% end %>
 
         <div class="card-body">

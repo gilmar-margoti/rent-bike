@@ -1,12 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div class="navbar-brand d-flex align-items-center">
-      <%= link_to bikes_path, class: "logo-link" do %>
-        <%= image_tag "https://cdn.iconscout.com/icon/premium/png-512-thumb/bike-location-2553072-2162982.png?f=webp&w=512" %>
-        <h4 class="logo-title">PedalPals</h4>
-      <% end %>
-
-
+      <%= image_tag "https://cdn.iconscout.com/icon/premium/png-512-thumb/bike-location-2553072-2162982.png?f=webp&w=512" %>
+       <span>BorrowMyBike</span>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,14 +13,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-          <button type="button" class="nav-button" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="menu-hamburger">
-              <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="user-icon">
-              <i class="fa-solid fa-circle-user"></i>
-            </div>
-          </button>
+          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag "https://avatars.githubusercontent.com/gilmar-margoti", class: "avatar", alt: "dropdown menu" %>
+          </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Home", bikes_path, class: "dropdown-item" %>
               <%= link_to "New bike", new_bike_path, class: "dropdown-item" %>
@@ -34,19 +25,8 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item dropdown">
-          <button type="button" class="nav-button" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="menu-hamburger">
-              <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="user-icon">
-              <i class="fa-solid fa-circle-user"></i>
-            </div>
-          </button>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Login", new_user_session_path, class: "dropdown-item", id: "login-open" %>
-              <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
-            </div>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
