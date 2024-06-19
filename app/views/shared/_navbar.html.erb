@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-brand d-flex align-items-center">
       <%= image_tag "https://cdn.iconscout.com/icon/premium/png-512-thumb/bike-location-2553072-2162982.png?f=webp&w=512" %>
-       <span>BorrowMyBike</span>
+      <%= link_to "PedalPals", bikes_path %>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,8 +30,22 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <li class="nav-item dropdown">
+          <button type="button" class="nav-button" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="menu-hamburger">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="user-icon">
+              <i class="fa-solid fa-circle-user"></i>
+            </div>
+          </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%#= link_to "Login", new_user_session_path, class: "dropdown-item", id: "login-open" %>
+              <%#= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button>
+            </div>
           </li>
         <% end %>
       </ul>

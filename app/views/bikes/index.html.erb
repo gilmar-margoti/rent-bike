@@ -1,13 +1,16 @@
-<h1>Bikes in Your Area</h1>
 
-<%= render "searchbar" %>
-<div class="flexbox">
-  <div class="bike-cards px-2">
-  <%= render "card_detail" %>
+
+  <h1>Bikes in Your Area</h1>
+
+  <%= render "searchbar" %>
+
+  <div class="flexbox">
+    <div class="bike-cards px-2">
+    <%= render "card_detail" %>
+    </div>
+
+    <div class="map-card" style="width: 500px; height: 1200px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-
-  <div class="map-card" style="width: 500px; height: 1200px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-</div>
