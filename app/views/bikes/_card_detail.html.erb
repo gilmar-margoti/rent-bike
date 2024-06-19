@@ -3,9 +3,9 @@
     <div class="col col-md-4 mt-3 mb-3">
       <div class="card" id="card-bike">
         <% if bike.photos.attached? %>
-          <%= cl_image_tag bike.photos.first.key, class:"card-img-top" %>
+          <%= cl_image_tag bike.photos.first.key, class:"", width: 200 %>
         <% else %>
-          <img src="https://coloringonly.com/images/imgcolor/Free-Bicycle-coloring-page.jpg" class="card-img-top" alt="Bike image">
+          <%= image_tag "bike_default.png", class:"", width: 200 %>
         <% end %>
 
         <div class="card-body">

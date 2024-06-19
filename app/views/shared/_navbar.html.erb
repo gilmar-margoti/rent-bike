@@ -1,8 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div class="navbar-brand d-flex align-items-center">
-      <%= image_tag "https://cdn.iconscout.com/icon/premium/png-512-thumb/bike-location-2553072-2162982.png?f=webp&w=512" %>
-      <%= link_to "PedalPals", bikes_path %>
+      <%= link_to bikes_path, class: "logo-link" do %>
+        <%= image_tag "https://cdn.iconscout.com/icon/premium/png-512-thumb/bike-location-2553072-2162982.png?f=webp&w=512" %>
+        <h4 class="logo-title">PedalPals</h4>
+      <% end %>
+
+
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,11 +44,8 @@
             </div>
           </button>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%#= link_to "Login", new_user_session_path, class: "dropdown-item", id: "login-open" %>
-              <%#= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
-            </button>
+              <%= link_to "Login", new_user_session_path, class: "dropdown-item", id: "login-open" %>
+              <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
             </div>
           </li>
         <% end %>

@@ -11,14 +11,22 @@ class BikesController < ApplicationController
         marker_html: render_to_string(partial: "marker")
       }
     end
-    if params[:query].present?
+
+    if params[:search_by_category] && params[:search_by_category] != ""
+      sql_subquery = <<~SQL
+        bikes.category @@ :query
+      SQL
+      @bikes = @bikes.where(sql_subquery, query: params[:search_by_category])
+    end
+
+    if params[:search_by_location] && params[:search_by_location] != ""
       sql_subquery = <<~SQL
         bikes.location @@ :query
-        OR bikes.category @@ :query
       SQL
-      @bikes = @bikes.where(sql_subquery, query: params[:query])
+      @bikes = @bikes.where(sql_subquery, query: params[:search_by_location])
     end
   end
+
 
   def new
     @bike = Bike.new

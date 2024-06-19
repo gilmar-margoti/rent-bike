@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #FAF9F6;
   padding-left: 16px;
   padding-right: 16px;
   .container-fluid {
@@ -42,4 +42,18 @@
 
 .nav-button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.logo-title{
+  // display: inline;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.logo-link{
+  text-decoration:none;
+  color: black;
+  display: flex;
+  align-items: center;
+
 }
