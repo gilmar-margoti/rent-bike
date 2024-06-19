@@ -6,7 +6,9 @@ class BikesController < ApplicationController
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
-        lng: bike.longitude
+        lng: bike.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {bike: bike}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
     if params[:query].present?
@@ -27,8 +29,9 @@ class BikesController < ApplicationController
   end
 
   def edit
-    @bike=Bike.find(params[:id])
+    @bike = Bike.find(params[:id])
   end
+
   def update
     @bike = Bike.find(params[:id])
     if @bike.update(bike_params)
@@ -37,12 +40,12 @@ class BikesController < ApplicationController
       render :edit
     end
   end
+
   def create
     puts params.inspect
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-
       redirect_to bike_path(@bike)
     else
       render :new, status: :unprocessable_entity
