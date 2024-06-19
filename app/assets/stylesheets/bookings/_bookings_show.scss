@@ -1,10 +1,9 @@
-@import 'config/colors';
-
 .card-booking {
   border-radius: 5px;
   border: 1px solid rgba(246, 64, 94, 0.098);
   box-shadow: 10px 5px 5px rgba(189, 189, 189, 0.294);
   transition: 0.5s ease-in-out;
+  width: 400px;
 }
 
 .card-booking .btn {
@@ -12,6 +11,7 @@
   border: 1px solid rgba(246, 64, 94, 0.098);
   padding: 5px;
   width: 200px;
+  margin: 0 auto;
   background-color: rgba(246, 64, 94, 0.098);
   text-decoration: none;
   color: rgb(5,180,112);
@@ -44,15 +44,16 @@
   opacity: 1;
 }
 
-.form {
-  position:relative;
-  z-index: 10;
-}
-
-.container{
-  margin: 0 auto;
-}
-
 .back-link a{
   color: #f6405f;
+}
+
+
+.container{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.dates p{
+  margin: 0px;
 }
